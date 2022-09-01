@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg bg-light mb-3">
     <div class="container-fluid">
       <ul class="navbar-nav me-auto order-1">
         <li class="nav-item">

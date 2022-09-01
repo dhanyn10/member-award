@@ -4,3 +4,6 @@
 .offcanvas .nav-link:hover{
     color: black;
 }
+.card-award{
+    height: 150px;
+}

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Award;
 
 class AwardController extends Controller
 {
@@ -10,10 +11,14 @@ class AwardController extends Controller
     {
         if(session()->has('email'))
         {
-            return view('award');
+            $data = Award::all();
+            return view('award', [
+                'dataAward' => $data
+            ]);
         }
         else
         {
+            flash('you need to login', 'danger');
             return redirect()->route('welcome');
         }
     }
