@@ -12,7 +12,7 @@
       </div>
       <ul class="navbar-nav ms-auto order-3">
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link"  data-bs-toggle="offcanvas" href="#offcanvasFilterMenu">
             <i class="fa fa-filter" aria-hidden="true"></i>
           </a>
         </li>
@@ -20,3 +20,4 @@
     </div>
   </nav>
   @include('offcanvas-navbar')
+  @include('offcanvas-filter')
