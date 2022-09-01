@@ -4,7 +4,7 @@
 <div class="row">
   @foreach ($dataAward as $item)
   <div class="col-md-4 mb-2">
-    <div class="card">
+    <div class="card border-0">
       <div class="card-body card-award" style="background-image: url({{$item->image}})">
         <div class="float-end">
           @if ($item->type == 1)
