@@ -4,12 +4,12 @@
     </div>
     <div class="offcanvas-body">
       <ul class="navbar-nav">
+        <x-nav-link route-name="award" text="home"/>
+        @if (session('role') == 1)
         <li class="nav-item">
-          <a class="nav-link" href="#">Home</a>
+        <x-nav-link route-name="add"/>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
+        @endif
         <li class="nav-item">
           <a class="nav-link" href="#">Pricing</a>
         </li>
