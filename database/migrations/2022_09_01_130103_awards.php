@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('award', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('image')->nullable();
             $table->tinyInteger('type');
             $table->bigInteger('poin');
         });
