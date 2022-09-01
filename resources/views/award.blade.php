@@ -4,8 +4,9 @@
 <div class="row">
   @foreach ($dataAward as $item)
   <div class="col-md-4 mb-2">
-    <div class="card border-0">
-      <div class="card-body card-award" style="background-image: url({{$item->image}})">
+    <div class="card border-0 card-award">
+      <img data-src="{{$item->image}}" class="lazy card-img"/>
+      <div class="card-img-overlay">
         <div class="float-end">
           @if ($item->type == 1)
           <span class="badge text-bg-primary">Vouchers</span>

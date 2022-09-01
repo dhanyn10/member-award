@@ -6,6 +6,7 @@
 }
 .card-award{
     height: 150px;
+    overflow: hidden;
     position: relative;
     background-color: #EFEFF0;
     background-repeat: no-repeat;
@@ -16,6 +17,9 @@
     box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.37);
     -webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.37);
     -moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.37);
+}
+.card-img{
+    width: 100%;
 }
 .border-0{
     border-style: none;
