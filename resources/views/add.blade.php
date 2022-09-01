@@ -21,6 +21,9 @@
     </form>
   </div>
   <div class="card-footer">
+    <a href="{{route('auto-add')}}" class="btn btn-sm btn-outline-secondary">Tambah Otomatis</a>
+  </div>
+  <div class="card-footer">
     <a href="{{route('award')}}" class="btn btn-sm btn-outline-secondary">kembali</a>
   </div>
 </div>

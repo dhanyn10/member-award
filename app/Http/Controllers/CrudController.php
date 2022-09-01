@@ -33,4 +33,17 @@ class CrudController extends Controller
         }
         return redirect()->route('add');
     }
+
+    public function autoAdd()
+    {
+        for($j = 0; $j < 10; $j++)
+        {
+            $create = Award::create([
+                'name' => fake()->company(),
+                'type' => rand(1,3),
+                'poin' => rand(200, 500000)
+            ]);
+        }
+        return redirect()->route('award');
+    }
 }
