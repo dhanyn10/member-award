@@ -7,11 +7,18 @@
 .card-award{
     height: 150px;
     position: relative;
+    background-color: #EFEFF0;
     background-repeat: no-repeat;
     background-size: cover;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.37);
+    -webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.37);
+    -moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.37);
+}
+.border-0{
+    border-style: none;
 }
 .card-poin{
     position: absolute;
