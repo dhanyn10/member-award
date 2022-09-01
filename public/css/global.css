@@ -6,4 +6,15 @@
 }
 .card-award{
     height: 150px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.card-poin{
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
 }

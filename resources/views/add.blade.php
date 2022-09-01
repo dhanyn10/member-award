@@ -11,6 +11,7 @@
     <form method="post">
       {{ csrf_field() }}
       <input type="text" name="name" class="form-control mb-3" placeholder="name">
+      <input type="text" name="image" class="form-control mb-3" placeholder="image url">
       <select name="type" class="form-control mb-3">
         <option value="1">Vouchers</option>
         <option value="2">Products</option>
