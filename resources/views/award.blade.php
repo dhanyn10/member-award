@@ -25,6 +25,7 @@
     <strong class="text-disabled">{{$item->name}}</strong>
   </div>
   @endforeach
+  {{ $dataAward->links() }}
   @else
   <div class="col-lg-12">
     <div class="alert alert-danger" role="alert">

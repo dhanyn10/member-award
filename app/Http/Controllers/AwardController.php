@@ -11,7 +11,7 @@ class AwardController extends Controller
     {
         if(session()->has('email'))
         {
-            $data = Award::all();
+            $data = Award::paginate(6);
             return view('award', [
                 'dataAward' => $data
             ]);
