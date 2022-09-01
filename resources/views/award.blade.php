@@ -2,6 +2,7 @@
 @section('content')
 @include('navbar')
 <div class="row">
+  @if (count($dataAward) > 0)
   @foreach ($dataAward as $item)
   <div class="col-md-4 mb-2">
     <div class="card border-0 card-award">
@@ -16,11 +17,20 @@
           <span class="badge text-bg-danger">Gift Cards</span>
         @endif
         </div>
-        <span class="text-disabled card-poin">{{$item->poin}}</span>
+        <div class="card-poin">
+          <span class="text-disabled">{{$item->poin}}</span>
+        </div>
       </div>
     </div>
     <strong class="text-disabled">{{$item->name}}</strong>
   </div>
   @endforeach
+  @else
+  <div class="col-lg-12">
+    <div class="alert alert-danger" role="alert">
+      no data found
+    </div>
+  </div>
+  @endif
 </div>
 @endsection

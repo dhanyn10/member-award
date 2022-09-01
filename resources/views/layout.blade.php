@@ -17,7 +17,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script>
     <script>
       var lazyLoadInstance = new LazyLoad({
-        // Your custom settings go here
+        restore_on_error: false
       });
     </script>
   </body>
