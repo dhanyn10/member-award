@@ -16,6 +16,7 @@ class Award extends Model
 
     protected $fillable = [
         "name",
+        "image",
         "type",
         "poin"
     ];
