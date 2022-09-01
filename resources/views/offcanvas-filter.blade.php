@@ -3,13 +3,40 @@
     <h5 class="offcanvas-title">Filter</h5>
   </div>
   <div class="offcanvas-body">
-    <div id="list-filter-point" class="mb-2"></div>
+    <div id="list-filter-point"></div>
+    <div id="list-filter-type"></div>
     <label for="point-needed" class="form-label">Point Needed</label>
     <div class="row">
       <div class="col-sm-4 text-primary" id="point-min">IDR 0</div>
       <div class="col-sm-4 offset-sm-4 text-primary" id="point-max">IDR 500.000</div>
     </div>
     <input type="range" class="form-range" min="0" max="500000" id="point-needed">
+    <p>Awards Type:</p>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="alltype">
+      <label class="form-check-label text-primary" for="alltype">
+        All Type
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="vouchers">
+      <label class="form-check-label text-primary" for="vouchers">
+        Vouchers
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="products">
+      <label class="form-check-label text-primary" for="products">
+        Products
+      </label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="giftcards">
+      <label class="form-check-label text-primary" for="giftcards">
+        Giftcards
+      </label>
+    </div>
   </div>
 </div>
 <script src="{{URL::asset('js/offcanvas-filter.js')}}"></script>
