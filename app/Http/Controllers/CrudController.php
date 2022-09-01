@@ -14,11 +14,13 @@ class CrudController extends Controller
     public function formAdd(Request $request)
     {
         $name = $request->input('name');
+        $image = $request->input('image');
         $type = (int) $request->input('type');
         $poin = (int) $request->input('poin');
 
         $create = Award::create([
             'name' => $name,
+            'image' => $image,
             'type' => $type,
             'poin' => $poin
         ]);
