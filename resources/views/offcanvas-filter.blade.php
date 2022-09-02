@@ -19,21 +19,21 @@
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="vouchers">
-      <label class="form-check-label text-primary" for="vouchers">
+      <input class="form-check-input" type="checkbox" value="" id="cb-vouchers">
+      <label class="form-check-label text-primary" for="cb-vouchers">
         Vouchers
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="products">
-      <label class="form-check-label text-primary" for="products">
+      <input class="form-check-input" type="checkbox" value="" id="cb-products">
+      <label class="form-check-label text-primary" for="cb-products">
         Products
       </label>
     </div>
 
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="giftcards">
-      <label class="form-check-label text-primary" for="giftcards">
+      <input class="form-check-input" type="checkbox" value="" id="cb-giftcards">
+      <label class="form-check-label text-primary" for="cb-giftcards">
         Giftcards
       </label>
     </div>
