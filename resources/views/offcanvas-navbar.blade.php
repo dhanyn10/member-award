@@ -1,6 +1,9 @@
-<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasAwardMenu">
+<div class="offcanvas offcanvas-start container pt-4" tabindex="-1" id="offcanvasAwardMenu">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Award Menu</h5>
+    <div class="d-grid">
+      <i class="fa fa-star text-warning" style="font-size: 5em;" aria-hidden="true"></i><br/>
+      <h5>Awards Menu</h5>
+    </div>
   </div>
   <div class="offcanvas-body">
     <ul class="navbar-nav">
