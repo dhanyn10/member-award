@@ -42,7 +42,7 @@ class CrudController extends Controller
         {
             $create = Award::create([
                 'name' => fake()->company(),
-                'image' => 'https://picsum.photos/300/150?grayscale&random='.$j+1,
+                'image' => 'https://picsum.photos/300/150?grayscale&random='.rand(10**4, 15**4),
                 'type' => rand(1,3),
                 'poin' => rand(200, 500000)
             ]);
