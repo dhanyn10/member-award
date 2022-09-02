@@ -38,6 +38,14 @@
         Giftcards
       </label>
     </div>
+    <form method="post">
+      {{ csrf_field() }}
+      <div class="d-grid">
+        <input type="hidden" name="poin" id="value-poin">
+        <input type="hidden" name="type" id="value-type">
+        <button class="btn btn-primary text-center" type="submit">Filter</button>
+      </div>
+    </form>
   </div>
 </div>
 <script src="{{URL::asset('js/offcanvas-filter.js')}}"></script>
