@@ -23,6 +23,6 @@ jobs:
       with:
         time: 10s
     - name: database migration with docker
-      run: docker exec oe-web php artisan migrate
+      run: docker exec member-web php artisan migrate
     - name: database seed with docker
-      run: docker exec oe-web php artisan db:seed
+      run: docker exec member-web php artisan db:seed
