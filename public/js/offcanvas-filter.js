@@ -5,6 +5,8 @@ let filterbyType = false
 document.getElementById('point-needed').addEventListener('input', (e) => {
   let currencyIDR = new Intl.NumberFormat('id-ID').format(e.target.value)
 
+  document.getElementById('value-poin').value = e.target.value
+
   if(e.target.value > 0) {
     filterbyPoint = true
   } else {
@@ -79,6 +81,7 @@ document.getElementById('alltype').addEventListener('change', () => {
     document.getElementById('list-filter-type').innerHTML = null
     checkFalse()
   }
+  checkFilterByType()
   displayClearFilterBtn()
 })
 
@@ -112,6 +115,8 @@ function checkFilterByType () {
     filterbyType = false
   else
     filterbyType = true
+
+  document.getElementById('value-type').value = checkedFilter
 }
 function displayClearFilterBtn () {
   if(filterbyPoint == true && filterbyType == true) {
