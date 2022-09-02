@@ -1,5 +1,5 @@
 # Member AWARDS
-
+[![Docker Image CI](https://github.com/dhanyn10/member-award/actions/workflows/docker-image.yml/badge.svg)](https://github.com/dhanyn10/member-award/actions/workflows/docker-image.yml) [![test phpunit](https://github.com/dhanyn10/member-award/actions/workflows/laravel.yml/badge.svg)](https://github.com/dhanyn10/member-award/actions/workflows/laravel.yml)
 ## Install
 - sebelumnya, pastikan sudah menginstall `docker` dan `docker compose` di komputer
 - install dan jalankan aplikasi ini dengan command `docker-compose up -d`
