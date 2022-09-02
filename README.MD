@@ -18,3 +18,13 @@ berikut ini data yang telah disediakan:
 user biasa  : users@award.com
 user admin  : admin@award.com
 ```
+### Tambah Data
+#### Manual
+- login menggunakan `user admin`
+- klik menu sisi kiri atas lalu pilih menu **add**
+- masukkan data yang diinginkan lalu tekan tombol **submit**
+#### Otomatis
+- login menggunakan `user admin`
+- klik menu sisi kiri atas lalu pilih menu **add**
+- lalu tekan tombol **Tambah Otomatis** *  
+*data yang otomatis ditambahkan berjumlah 10 data
