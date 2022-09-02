@@ -1,0 +1,28 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Copy .env
+      run: php -r "copy('.env.docker', '.env');"
+    - name: Run docker-compose
+      run: docker-compose up -d
+    - name: Sleep for 10s
+      uses: juliangruber/sleep-action@v1
+      with:
+        time: 10s
+    - name: database migration with docker
+      run: docker exec member-web php artisan migrate
+    - name: database seed with docker
+      run: docker exec member-web php artisan db:seed
