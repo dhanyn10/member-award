@@ -14,6 +14,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: Copy .env
+      run: php -r "copy('.env.docker', '.env');"
     - name: Run docker-compose
       run: docker-compose up -d
     - name: Sleep for 10s
