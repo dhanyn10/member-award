@@ -1,7 +1,15 @@
 let checkedFilter = []
+let filterbyPoint = false
+let filterbyType = false
 
 document.getElementById('point-needed').addEventListener('input', (e) => {
   let currencyIDR = new Intl.NumberFormat('id-ID').format(e.target.value)
+
+  if(e.target.value > 0) {
+    filterbyPoint = true
+  } else {
+    filterbyPoint = false
+  }
   
   let currencyButton = document.createElement('button')
   currencyButton.classList.add('btn','btn-outline-primary','btn-sm', 'mb-2')
@@ -15,9 +23,13 @@ document.getElementById('point-needed').addEventListener('input', (e) => {
     document.getElementById('list-filter-point').removeChild(this)
   }
 
+  let parentElem = document.getElementById('list-filter-point')
+
   document.getElementById('list-filter-point').innerHTML = null
   document.getElementById('list-filter-point').appendChild(currencyButton)
   document.getElementById('point-min').innerHTML = "IDR " + currencyIDR
+
+  displayClearFilterBtn()
 })
 
 document.getElementById('alltype').addEventListener('change', () => {
@@ -28,11 +40,13 @@ document.getElementById('alltype').addEventListener('change', () => {
     document.getElementById('cb-products').checked = false
     document.getElementById('cb-giftcards').checked = false
     checkedFilter = []
+    filterbyType = false
   }
 
 
   if(document.getElementById('alltype').checked == true)
   {
+    filterbyType = true
     document.getElementById('cb-vouchers').checked = true
     document.getElementById('cb-products').checked = true
     document.getElementById('cb-giftcards').checked = true
@@ -55,17 +69,21 @@ document.getElementById('alltype').addEventListener('change', () => {
       //uncheck semua type filter
       checkFalse()
     }
-    document.getElementById('list-filter-type').innerHTML = null
-    document.getElementById('list-filter-type').appendChild(typeButton)
+    let parentElem = document.getElementById('list-filter-type')
+    if(parentElem.hasChildNodes() == false) {
+      document.getElementById('list-filter-type').appendChild(typeButton)
+    }
   }
   else
   {
     document.getElementById('list-filter-type').innerHTML = null
     checkFalse()
   }
+  displayClearFilterBtn()
 })
 
 function recreateBtn() {
+  document.getElementById('list-filter-type').innerHTML = null
   if(checkedFilter.length > 0)
   {
     let typeButton = document.createElement('button')
@@ -85,8 +103,47 @@ function recreateBtn() {
       //uncheck semua type filter
       checkFalse()
     }
-    document.getElementById('list-filter-type').innerHTML = null
     document.getElementById('list-filter-type').appendChild(typeButton)
+  }
+}
+
+function checkFilterByType () {
+  if(checkedFilter.length == 0)
+    filterbyType = false
+  else
+    filterbyType = true
+}
+function displayClearFilterBtn () {
+  if(filterbyPoint == true && filterbyType == true) {
+    let clearAllFilterButton = document.createElement('button')
+    clearAllFilterButton.classList.add('btn','btn-outline-primary','btn-sm', 'mb-2')
+    clearAllFilterButton.innerHTML = "Clear All Filter"
+    clearAllFilterButton.onclick = function () {
+      // hapus elemen html
+      document.getElementById('list-filter-point').innerHTML = null
+      document.getElementById('list-filter-type').innerHTML = null
+      document.getElementById('list-filter-clear').removeChild(this)
+
+      // reset nilai filter
+      checkedFilter = []
+      filterbyPoint = false
+      filterbyType = false
+
+      // uncheck semua filter type
+      document.getElementById('alltype').checked = false
+      document.getElementById('cb-vouchers').checked = false
+      document.getElementById('cb-products').checked = false
+      document.getElementById('cb-giftcards').checked = false
+    }
+    let parentElem = document.getElementById('list-filter-clear')
+    if(parentElem.hasChildNodes() == false) {
+      parentElem.appendChild(clearAllFilterButton)
+    }
+  }
+  else
+  {
+    // hapus tombol jika salah satu diantara filtertype atau filterpoint bernilai false
+    document.getElementById('list-filter-clear').innerHTML = null 
   }
 }
 
@@ -100,13 +157,14 @@ document.getElementById('cb-vouchers').addEventListener('change', () => {
     {
       checkedFilter.splice(idx, 1)
     }
-    recreateBtn()
   }
   else
   {
     checkedFilter.push('Voucher')
-    recreateBtn()
   }
+  recreateBtn()
+  checkFilterByType()
+  displayClearFilterBtn()
 })
 
 document.getElementById('cb-products').addEventListener('change', () => {
@@ -119,13 +177,14 @@ document.getElementById('cb-products').addEventListener('change', () => {
     {
       checkedFilter.splice(idx, 1)
     }
-    recreateBtn()
   }
   else
   {
     checkedFilter.push('Product')
-    recreateBtn()
   }
+  recreateBtn()
+  checkFilterByType()
+  displayClearFilterBtn()
 })
 
 document.getElementById('cb-giftcards').addEventListener('change', () => {
@@ -138,11 +197,12 @@ document.getElementById('cb-giftcards').addEventListener('change', () => {
     {
       checkedFilter.splice(idx, 1)
     }
-    recreateBtn()
   }
   else
   {
     checkedFilter.push('Giftcard')
-    recreateBtn()
   }
+  recreateBtn()
+  checkFilterByType()
+  displayClearFilterBtn()
 })
