@@ -5,6 +5,7 @@
   <div class="offcanvas-body">
     <div id="list-filter-point"></div>
     <div id="list-filter-type"></div>
+    <div id="list-filter-clear"></div>
     <label for="point-needed" class="form-label">Point Needed</label>
     <div class="row">
       <div class="col-sm-4 text-primary" id="point-min">IDR 0</div>
