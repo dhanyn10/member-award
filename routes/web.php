@@ -13,3 +13,4 @@ Route::get('auto-add', [CrudController::class, 'autoAdd'])->name('auto-add');
 Route::get('logout', [LogoutController::class, 'logout'])->name('logout');
 Route::post('/', [WelcomeController::class, 'login']);
 Route::post('add', [CrudController::class, 'formAdd']);
+Route::post('award', [AwardController::class, 'show']);
