@@ -18,5 +18,6 @@ Route::group([
   Route::get('auto-add', [CrudController::class, 'autoAdd'])->name('auto-add');
   Route::post('add', [CrudController::class, 'formAdd']);
   Route::post('award', [AwardController::class, 'show']);
+  Route::post('award/delete/{id}', [AwardController::class, 'delete']);
 });
 Route::get('logout', [LogoutController::class, 'logout'])->name('logout');

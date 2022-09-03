@@ -41,4 +41,19 @@ class AwardController extends Controller
             'dataAward' => $data
         ]);
     }
+
+    public function delete(Request $request)
+    {
+        $id = $request->id;
+        $delete = Award::where('id', $id)->delete();
+        if($delete)
+        {
+            flash('data deleted', 'success');
+        }
+        else
+        {
+            flash('failed deleting data', 'danger');
+        }
+        return redirect()->route('award');
+    }
 }
