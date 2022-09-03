@@ -5,7 +5,7 @@
 - install dan jalankan aplikasi ini dengan command `docker-compose up -d`
 - tunggu hingga 10 detik atau lebih, lalu jalankan fungsi migration dengan command
   ```
-  docker-exec member-web php artisan migrate
+  docker exec member-web php artisan migrate
   ```
 - berikutnya, jalankan db seeding untuk mengisi sampel data user dengan command
   ```
