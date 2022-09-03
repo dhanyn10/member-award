@@ -1,6 +1,7 @@
 @extends('layout')
 @section('content')
 @include('navbar')
+@include('alert')
 <div class="row">
   @if (count($dataAward) > 0)
   @foreach ($dataAward as $item)
@@ -19,6 +20,14 @@
         </div>
         <div class="card-poin">
           <span class="text-disabled">{{$item->poin}}</span>
+          @if (session('role') == 1)
+            <form action="{{url('award/delete', $item->id)}}" method="post" class="float-end">
+                {{ csrf_field() }}
+              <button type="submit" class="btn btn-outline-danger btn-sm">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              </button>
+            </form>
+          @endif
         </div>
       </div>
     </div>
